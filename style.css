@@ -29,6 +29,7 @@ p{
   height:400px;
   z-index:3;
   font-family:sans;
+  overlfow:auto;
 }
 #preview > html, #preview > body{
   margin:0;
