@@ -140,7 +140,7 @@ button:hover{
   100%{
     top:-800px;
     height:50%;
-    display:hidden;
+    display: none;
   }
 }
 #trans-img {
