@@ -158,6 +158,7 @@ function showPage(page) {
   for(var i = 0; i < pages.length; i++){
     pages[i].style.display = "none";
   }
+  $("#trans-img").style.display = "block";
   $("#trans-img").style.animation = ("switchTrans 2s 1");
   setTimeout(function () {
     $("#" + page).style.display = "block";
@@ -165,6 +166,7 @@ function showPage(page) {
   }, 1000);
   setTimeout(function () {
     $("#trans-img").style.animation = ("none");
+    $("#trans-img").style.display = "none";
   }, 2000);
 }
 showPage("Home");
