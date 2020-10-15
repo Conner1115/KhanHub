@@ -125,8 +125,9 @@ button:hover{
 }
 @keyframes slidedown{
   0%{
-    top:-100%;
+    top:-800px;
     height:50%;
+    display:block;
   }
   100%{
     top:0%;
@@ -137,8 +138,9 @@ button:hover{
     top:0%;
   }
   100%{
-    top:-100%;
+    top:-800px;
     height:50%;
+    display:hidden;
   }
 }
 #trans-img {
