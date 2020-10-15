@@ -29,7 +29,7 @@
   height:400px;
   z-index:3;
   font-family:sans;
-  overlfow:auto;
+  overflow:auto;
 }
 #preview > html, #preview > body{
   margin:0;
