@@ -126,17 +126,21 @@ button:hover{
 @keyframes slidedown{
   0%{
     top:-200%;
+    height:0px;
   }
   100%{
     top:0%;
+    height:100%;
   }
 }
 @keyframes slideup{
   0%{
     top:0%;
+    height:100%;
   }
   100%{
     top:-200%;
+    height:0px;
   }
 }
 #trans-img {
