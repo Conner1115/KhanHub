@@ -30,12 +30,10 @@ var defaultWebpage = `
       <meta charset="utf-8">
       <title>New Webpage</title>
     </head>
-
     <body>
       
     </body>
   </html>
-
 `;
 editor.style.fontSize = "15px";
 var e = ace.edit(editor,{
@@ -245,8 +243,9 @@ for (var i = 0; i < actions.length; i++) {
   showOnClick(i);
 }
 
-if(window.innerWidth < 950){
-$("#size-message").style.display = "block";
-}else{
+
+//if(window.innerWidth < 950){
+//$("#size-message").style.display = "block";
+//}else{
   $("#size-message").style.display = "none";
-}
+//}
