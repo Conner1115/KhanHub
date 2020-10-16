@@ -260,8 +260,4 @@ for (var i = 0; i < actions.length; i++) {
   showOnClick(i);
 }
 
-//if(window.innerWidth < 950){
-//$("#x001size-message").style.display = "block";
-//}else{
-$("#x001size-message").style.display = "none";
-//}
+
