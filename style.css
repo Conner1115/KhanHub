@@ -417,12 +417,4 @@ button:hover {
   border-radius: 5px;
   color: white;
 }
-#x001size-message {
-  position: fixed;
-  z-index: 100;
-  width: 80%;
-  height: 80%;
-  margin: 10%;
-  background: white;
-  border: solid black 1px;
-}
+
