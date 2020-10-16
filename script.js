@@ -1,28 +1,45 @@
-var actions = ["Home","About","Editor","Projects","Userguide","Credits"];
-var themes = ["monokai","dawn","dracula","ambiance","eclipse","github","nord_dark","solarized_dark","solarized_light","terminal","twilight","xcode"];
-
+var actions = ["Home", "About", "Editor", "Projects", "Userguide", "Credits"];
+var themes = [
+  "monokai",
+  "dawn",
+  "dracula",
+  "ambiance",
+  "eclipse",
+  "github",
+  "nord_dark",
+  "solarized_dark",
+  "solarized_light",
+  "terminal",
+  "twilight",
+  "xcode"
+];
 
 var projectNames = [];
-if(localStorage.getItem("names")){
+if (localStorage.getItem("names")) {
   projectNames = JSON.parse(localStorage.getItem("names"));
 }
 var projectCodes = [];
-if(localStorage.getItem("codes")){
+if (localStorage.getItem("codes")) {
   projectCodes = JSON.parse(localStorage.getItem("codes"));
 }
 var currentProject = -1;
-if(localStorage.getItem("current")){
+if (localStorage.getItem("current")) {
   currentProject = localStorage.getItem("current");
 }
 
-for(var i = 0; i < themes.length; i++){
+for (var i = 0; i < themes.length; i++) {
   var s = document.createElement("script");
-  s.setAttribute("src","https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/theme-"+themes[i]+".min.js");
+  s.setAttribute(
+    "src",
+    "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/theme-" +
+      themes[i] +
+      ".min.js"
+  );
   document.body.appendChild(s);
 }
 var $ = (prop) => document.querySelector(prop);
-$("#project-title").innerHTML = projectNames[currentProject];
-var editor = $("#editor");
+$("#x001project-title").innerHTML = projectNames[currentProject];
+var editor = $("#x001editor");
 var defaultWebpage = `
 <!DOCTYPE html>
   <html>
@@ -36,41 +53,38 @@ var defaultWebpage = `
   </html>
 `;
 editor.style.fontSize = "15px";
-var e = ace.edit(editor,{
-    mode: "ace/mode/html",
-    selectionStyle: "text",
-  value:defaultWebpage
+var e = ace.edit(editor, {
+  mode: "ace/mode/html",
+  selectionStyle: "text",
+  value: defaultWebpage
 });
 e.setOptions({
-    height:400,
-    
+  height: 400
 });
 
-if(currentProject === -1){
-e.setValue(`<!--You haven't created any projects yet.
+if (currentProject === -1) {
+  e.setValue(`<!--You haven't created any projects yet.
 Go to the 'My Projects' section to make one.-->`);
 }
 
-
-$("#theme").addEventListener("change",function(){
-  if($("#theme").value !== "default"){
-  e.setTheme("ace/theme/"+$("#theme").value);
-  }else{
-  e.setTheme("none");
+$("#x001theme").addEventListener("change", function () {
+  if ($("#x001theme").value !== "default") {
+    e.setTheme("ace/theme/" + $("#x001theme").value);
+  } else {
+    e.setTheme("none");
   }
 });
 
-
-function closeD(){
-$("#code-deploy-parent").style.animation = "slideup 1s 1";
-  $("#code-deploy-parent").style.animationFillMode = "forwards";
-  $("#shadow-wall").style.display = "none";
+function closeD() {
+  $("#x001code-deploy-parent").style.animation = "slideup 1s 1";
+  $("#x001code-deploy-parent").style.animationFillMode = "forwards";
+  $("#x001shadow-wall").style.display = "none";
 }
-function deploy(){
-  $("#code-deploy-parent").style.animation = "slidedown 1s 1";
-  $("#code-deploy-parent").style.animationFillMode = "forwards";
-  $("#shadow-wall").style.display = "block";
-  $("#code-deploy").innerHTML = `<!DOCTYPE html>
+function deploy() {
+  $("#x001code-deploy-parent").style.animation = "slidedown 1s 1";
+  $("#x001code-deploy-parent").style.animationFillMode = "forwards";
+  $("#x001shadow-wall").style.display = "block";
+  $("#x001code-deploy").innerHTML = `<!DOCTYPE html>
   <html>
     <head>
       <meta charset="utf-8">
@@ -90,16 +104,16 @@ function openWindow(){
     </body>
   </html>`;
 }
-function closeNav(){
-$("#nav-links").style.animation = "slideup 1s 1";
-  $("#nav-links").style.animationFillMode = "forwards";
+function closeNav() {
+  $("#x001nav-links").style.animation = "slideup 1s 1";
+  $("#x001nav-links").style.animationFillMode = "forwards";
 }
-function openNav(){
-  $("#nav-links").style.animation = "slidedown 1s 1";
-  $("#nav-links").style.animationFillMode = "forwards";
+function openNav() {
+  $("#x001nav-links").style.animation = "slidedown 1s 1";
+  $("#x001nav-links").style.animationFillMode = "forwards";
 }
-function restart(){
-  $("#preview").innerHTML = e.getOption("value");
+function restart() {
+  $("#x001preview").innerHTML = e.getOption("value");
 }
 function livePreview() {
   var w = window.open();
@@ -107,135 +121,138 @@ function livePreview() {
   w.document.write(e.getOption("value"));
   w.document.close();
 }
-function dropCreator(){
-  $("#project-form").style.animation = "slidedown 1s 1";
-  $("#project-form").style.animationFillMode = "forwards";
-  $("#shadow-wall").style.display = "block";
+function dropCreator() {
+  $("#x001project-form").style.animation = "slidedown 1s 1";
+  $("#x001project-form").style.animationFillMode = "forwards";
+  $("#x001shadow-wall").style.display = "block";
 }
-function closeForm(){
-  $("#project-form").style.animation = "slideup 1s 1";
-  $("#project-form").style.animationFillMode = "forwards";
-  $("#shadow-wall").style.display = "none";
+function closeForm() {
+  $("#x001project-form").style.animation = "slideup 1s 1";
+  $("#x001project-form").style.animationFillMode = "forwards";
+  $("#x001shadow-wall").style.display = "none";
 }
-function saveProject(){
+function saveProject() {
   projectCodes[currentProject] = e.getOption("value");
-  localStorage.setItem("codes",JSON.stringify(projectCodes));
-  $("#save-p").innerHTML = "Saving...";
-  $("#save-p").disabled = true;
-  setTimeout(function(){
-    $("#save-p").disabled = false;
-    $("#save-p").innerHTML = "Saved!";
-  },1000);
-  setTimeout(function(){
-    $("#save-p").innerHTML = "Save";
-  },2000);
+  localStorage.setItem("codes", JSON.stringify(projectCodes));
+  $("#x001save-p").innerHTML = "Saving...";
+  $("#x001save-p").disabled = true;
+  setTimeout(function () {
+    $("#x001save-p").disabled = false;
+    $("#x001save-p").innerHTML = "Saved!";
+  }, 1000);
+  setTimeout(function () {
+    $("#x001save-p").innerHTML = "Save";
+  }, 2000);
 }
-function openDel(){
-  $("#delete-form").style.animation = "slidedown 1s 1";
-  $("#delete-form").style.animationFillMode = "forwards";
-  $("#shadow-wall").style.display = "block";
+function openDel() {
+  $("#x001delete-form").style.animation = "slidedown 1s 1";
+  $("#x001delete-form").style.animationFillMode = "forwards";
+  $("#x001shadow-wall").style.display = "block";
 }
-function closeDel(){
-  $("#delete-form").style.animation = "slideup 1s 1";
-  $("#delete-form").style.animationFillMode = "forwards";
-  $("#shadow-wall").style.display = "none";
+function closeDel() {
+  $("#x001delete-form").style.animation = "slideup 1s 1";
+  $("#x001delete-form").style.animationFillMode = "forwards";
+  $("#x001shadow-wall").style.display = "none";
 }
 
-
-for(var i = 0; i < projectNames.length; i++){
-  if(projectNames[i]){
-  $("#project-wrapper").innerHTML+= `<div class = "project Editor-button project-${i}"><div class = "project-name">${projectNames[i]}</div></div>`;
+for (var i = 0; i < projectNames.length; i++) {
+  if (projectNames[i]) {
+    $(
+      "#x001project-wrapper"
+    ).innerHTML += `<div class = "project Editor-button project-${i}"><div class = "project-name">${projectNames[i]}</div></div>`;
   }
 }
-
 
 function showPage(page) {
-  $("#project-title").innerHTML = projectNames[currentProject];
+  $("#x001project-title").innerHTML = projectNames[currentProject];
   window.scrollTo(0, 0);
-  let pages = document.getElementsByClassName("page");
-  for(var i = 0; i < pages.length; i++){
+  let pages = document.getElementsByClassName("x002page");
+  for (var i = 0; i < pages.length; i++) {
     pages[i].style.display = "none";
   }
-  $("#trans-img").style.display = "block";
-  $("#trans-img").style.animation = ("switchTrans 2s 1");
+  $("#x001trans-img").style.display = "block";
+  $("#x001trans-img").style.animation = "switchTrans 2s 1";
   setTimeout(function () {
-    $("#" + page).style.display = "block";
+    $("#x001" + page).style.display = "block";
     e.setValue(projectCodes[currentProject]);
   }, 1000);
   setTimeout(function () {
-    $("#trans-img").style.animation = ("none");
-    $("#trans-img").style.display = "none";
+    $("#x001trans-img").style.animation = "none";
+    $("#x001trans-img").style.display = "none";
   }, 2000);
 }
 showPage("Home");
 
-var setEditorCode = function(num){
-  var I1 = document.querySelector(".project-"+num);
-  I1.addEventListener("click",function(){
+var setEditorCode = function (num) {
+  var I1 = document.querySelector(".project-" + num);
+  I1.addEventListener("click", function () {
     e.setValue(projectCodes[num]);
     currentProject = num;
-    localStorage.setItem("current",currentProject);
+    localStorage.setItem("current", currentProject);
     showPage("Editor");
-    
   });
 };
 
-for(var i = 0; i < projectNames.length; i++){
+for (var i = 0; i < projectNames.length; i++) {
   setEditorCode(i);
 }
 
-function pushNewProject(){
+function pushNewProject() {
   closeForm();
-  if(projectNames.length < 5){
-  projectNames.push($("#project-name").value);
+  if (projectNames.length < 5) {
+    projectNames.push($("#x001project-name").value);
     projectCodes.push(defaultWebpage);
-    
-    
- localStorage.setItem("codes",JSON.stringify(projectCodes)); localStorage.setItem("names",JSON.stringify(projectNames));
-    $("#project-wrapper").innerHTML = "";
-    for(var i = 0; i < projectNames.length; i++){
-  if(projectNames[i]){
-  $("#project-wrapper").innerHTML+= `<div class = "project Editor-button"><div class = "project-name project-${i}">${projectNames[i]}</div></div>`;
-    currentProject = i;
-  }
-}
-    for(var i = 0; i < projectNames.length; i++){
-  setEditorCode(i);
-}
-  }else{
+
+    localStorage.setItem("codes", JSON.stringify(projectCodes));
+    localStorage.setItem("names", JSON.stringify(projectNames));
+    $("#x001project-wrapper").innerHTML = "";
+    for (var i = 0; i < projectNames.length; i++) {
+      if (projectNames[i]) {
+        $(
+          "#x001project-wrapper"
+        ).innerHTML += `<div class = "project Editor-button"><div class = "project-name project-${i}">${projectNames[i]}</div></div>`;
+        currentProject = i;
+      }
+    }
+    for (var i = 0; i < projectNames.length; i++) {
+      setEditorCode(i);
+    }
+  } else {
     alert("You can only have five projects.");
   }
-  
 }
-function spliceProject(){
+function spliceProject() {
   closeDel();
-  var prIndex = projectNames.indexOf($("#delete-name").value);
- if(prIndex !== -1){
-  projectNames.splice(prIndex);
-  projectCodes.splice(prIndex);
-  localStorage.setItem("names",JSON.stringify(projectNames));
-  localStorage.setItem("codes",JSON.stringify(projectCodes));
-   $("#project-wrapper").innerHTML = "";
-    for(var i = 0; i < projectNames.length; i++){
-  if(projectNames[i]){
-  $("#project-wrapper").innerHTML+= `<div class = "project Editor-button"><div class = "project-name project-${i}">${projectNames[i]}</div></div>`;
-    currentProject = i;
+  var prIndex = projectNames.indexOf($("#x001delete-name").value);
+  if (prIndex !== -1) {
+    projectNames.splice(prIndex);
+    projectCodes.splice(prIndex);
+    localStorage.setItem("names", JSON.stringify(projectNames));
+    localStorage.setItem("codes", JSON.stringify(projectCodes));
+    $("#x001project-wrapper").innerHTML = "";
+    for (var i = 0; i < projectNames.length; i++) {
+      if (projectNames[i]) {
+        $(
+          "#x001project-wrapper"
+        ).innerHTML += `<div class = "project Editor-button"><div class = "project-name project-${i}">${projectNames[i]}</div></div>`;
+        currentProject = i;
+      }
+    }
+    for (var i = 0; i < projectNames.length; i++) {
+      setEditorCode(i);
+    }
+  } else {
+    alert(
+      "That project doesn't seem to exist.  Type the project name exactly character for character."
+    );
   }
-}
-    for(var i = 0; i < projectNames.length; i++){
-  setEditorCode(i);
-}
- }else{
-   alert("That project doesn't seem to exist.  Type the project name exactly character for character.");
- }
-  
 }
 
 function showOnClick(num) {
   var buttonIndex = document.querySelectorAll("." + actions[num] + "-button");
-  for(var i = 0; i < buttonIndex.length; i++){
-    buttonIndex[i].addEventListener("click",function(){
-    showPage(actions[num]);
+  for (var i = 0; i < buttonIndex.length; i++) {
+    buttonIndex[i].addEventListener("click", function () {
+      showPage(actions[num]);
     });
   }
 }
@@ -243,9 +260,8 @@ for (var i = 0; i < actions.length; i++) {
   showOnClick(i);
 }
 
-
 //if(window.innerWidth < 950){
-//$("#size-message").style.display = "block";
+//$("#x001size-message").style.display = "block";
 //}else{
-  $("#size-message").style.display = "none";
+$("#x001size-message").style.display = "none";
 //}
