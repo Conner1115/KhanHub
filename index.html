@@ -1,154 +1,252 @@
 <!DOCTYPE html>
 <html id="x001html">
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet" />
+  </head>
 
-<head>
-  <link rel="stylesheet" type="text/css" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-</head>
+  <body id="x001body">
+    <div class="x002page" id="x001Home">
+      <h1 class="b336centered">KhanHub</h1>
+      <h2 class="b336centered">Live websites on Khan Academy.</h2>
+      <button
+        class="scenebutton About-button"
+        style="
+          width: 200px;
+          height: 75px;
+          font-size: 30px;
+          font-family: Righteous;
+          background: rgb(0, 100, 255);
+          border: none;
+          outline: none;
+          border-radius: 10px;
+          color: white;
+          transform: skewX(-20deg);
+          position: absolute;
+          left: 50%;
+          margin-left: -100px;
+          margin-top: 50px;
+        "
+      >
+        Get Started
+      </button>
+    </div>
+    <div class="x002page" id="x001About">
+      <h1 class="b336centered">About</h1>
+      <h2 class="b336centered">Features</h2>
+      <div id="x001feature-wrapper">
+        <div class="j88lfeature">
+          <img src="https://cdn.kastatic.org/images/ohnoes-happy.png" alt="" />
+          <div>
+            <p class="x003p">
+              Oh noes won't bother you if you code at KhanHub. You can now enjoy life without him.
+            </p>
+          </div>
+        </div>
+        <div class="j88lfeature">
+          <img src="https://www.kasandbox.org/programming-images/creatures/Hopper-Cool.png" alt="" />
+          <div>
+            <p class="x003p">
+              Keep your cool while coding with an in-browser <em>and</em> a live website preview
+            </p>
+          </div>
+        </div>
+        <div class="j88lfeature">
+          <img src="https://www.kasandbox.org/programming-images/creatures/Winston.png" alt="" />
+          <div>
+            <p class="x003p">Customize your coding experience with different editor themes.</p>
+          </div>
+        </div>
+      </div>
+      <h2 style="margin-top: 100px" class="b336centered">Why I made this</h2>
+      <p class="x003p">
+        To me, Khan Academy has a very small coding environment. Limited functionality, very tiny previews,
+        and all those other sad things.
+      </p>
+      <p class="x003p">
+        My goal, ever since I became an HTML/CSS/JS guy was to expand KA's coding platform and give everyone
+        the BEST coding experience ever while still following the guidelines.
+      </p>
+      <p class="x003p">
+        On the beginning of October, I made a project that used Local Storage, a long-believed disallowed
+        functionality, but then Evan Lewis told me and said the <b>Entire Khan Academy</b> could use it. I was
+        really excited that I impacted the whole Khan Academy, but in a small way. I want to make a bigger
+        impact this time and give everyone the top coding experience and also, I want to share my knowledge
+        with all of you.
+      </p>
+      <p class="x003p">I hope you enjoy my project and make it part of your coding life. Happy Coding.</p>
+      <p class="x003p">
+        <em><b>-LeviathanProgramming</b></em>
+      </p>
+    </div>
+    <div class="x002page" id="x001Userguide">
+      <h1 class="b336centered">User Guide</h1>
+      <h2 class="b336centered">Using the Editor</h2>
+      <p class="x003p">
+        The editor is very simillar to the Khan Academy HTML editor but it has some differences. To check it
+        out, create a project in the Projects section.
+      </p>
+      <h3 class="b336centered">Why isn't my work showing in the in-browser preview?</h3>
+      <p class="x003p">
+        The reason why it isn't showing is because for this editor, you will have to press the Reload button
+        for it to work. If you don't press it, the program won't run.
+      </p>
+      <h3 class="b336centered">How do I Live Preview my website?</h3>
+      <p class="x003p">
+        Add a bit of code in the editor, and when you're satisfied with it, press the Live Preview button. You
+        can then see your website live.
+      </p>
+      <h3 class="b336centered">Why won't my live website update when I reload it?</h3>
+      <p class="x003p">
+        Backend programming is impossible to do on KA. What you'll have to do is close the live tab and then
+        press the Live Preview button again. Your website should now be immediately updated.
+      </p>
+      <h3 class="b336centered">Why can I only make five projects?</h3>
+      <p class="x003p">
+        Evan Lewis said that if using Local Storage, massive ammounts of data cannot be stored. That's why you
+        have a limit of five projects only.
+      </p>
+      <h3 class="b336centered">How do I deploy my live website to KA?</h3>
+      <p class="x003p">
+        The instructions are a little complicated here, so read carefully.<br /><br />1. After you have
+        finished coding up your site, press the Deploy button. A popup window should show.<br />2. Follow the
+        instructions of copying the code and pasting it into a KA webpage. Don't forget to save it!<br />3. If
+        someone goes to your webpage and clicks the screen, they will see the live website. You can modify the
+        code to have a descriptive screenshot. That will not be explained in this tutorial.<br />3.5. Don't
+        try to display your live website on document load because your computer and/or the other user's
+        computer will block it. It has to be done on mouse click or key press.
+      </p>
+      <p class="x003p">
+        If you have any questions, please ask me.<br /><br />Happy Coding.
+        <em><b>-LeviathanProgramming</b></em>
+      </p>
+    </div>
+    <div class="x002page" id="x001Editor">
+      <div id="x001editor-parent">
+        <h1 class="b336centered" id="x001project-title"></h1>
+        <div id="x001editor-wrap">
+          <div id="x001editor"></div>
+          <div id="x001preview">
+            <iframe id="x001thepreview" frameborder="0"></iframe>
+          </div>
+        </div>
+        <div id="x001code-underline">
+          <div id="x001button-wrapper">
+            <button onclick="saveProject()" id="x001save-p">Save</button>
+            <button onclick="deploy()">Deploy</button>
+            <span
+              >Choose Theme
+              <select id="x001theme">
+                <option value="default">Default</option>
+                <option value="monokai">Monokai</option>
+                <option value="dawn">Dawn</option>
+                <option value="dracula">Dracula</option>
+                <option value="ambiance">Ambiance</option>
+                <option value="eclipse">Eclipse</option>
+                <option value="github">Github</option>
+                <option value="nord_dark">Nord Dark</option>
+                <option value="solarized_dark">Solarized Dark</option>
+                <option value="solarized_light">Solarized Light</option>
+                <option value="terminal">Terminal</option>
+                <option value="twilight">Twilight</option>
+                <option value="xcode">Xcode</option>
+              </select>
+            </span>
+            <button onclick="livePreview()">Live Preview</button><button onclick="restart()">Reload</button>
+          </div>
+        </div>
+      </div>
 
-<body id="x001body">
-  <div class="x002page" id="x001Home">
-    <h1 class="b336centered">KhanHub</h1>
-    <h2 class="b336centered">Live websites on Khan Academy.</h2>
-    <button class="scenebutton About-button" style="width:200px;height:75px;font-size:30px;font-family:Righteous;background:rgb(0,100,255);border:none;outline:none;border-radius:10px;color:white;transform:skewX(-20deg);position:absolute;left:50%;margin-left:-100px;margin-top:50px;">Get Started</button>
-  </div>
-  <div class="x002page" id="x001About">
-    <h1 class="b336centered">About</h1>
-    <h2 class="b336centered">Features</h2>
-    <div id="x001feature-wrapper">
-      <div class="j88lfeature">
-        <img src="https://cdn.kastatic.org/images/ohnoes-happy.png" alt="">
-        <div>
-          <p class="x003p">Oh noes won't bother you if you code at KhanHub. You can now enjoy life without him.</p>
-        </div>
+      <div id="x001code-deploy-parent">
+        <button
+          id="x001close"
+          style="position: absolute; right: 5px; top: 5px; padding: 5px"
+          onclick="closeD()"
+        >
+          X
+        </button>
+        <h4 style="text-align: center">Copy all the code and paste it into a KA webpage</h4>
+        <textarea id="x001code-deploy" readonly></textarea>
       </div>
-      <div class="j88lfeature">
-        <img src="https://www.kasandbox.org/programming-images/creatures/Hopper-Cool.png" alt="">
-        <div>
-          <p class="x003p">Keep your cool while coding with an in-browser <em>and</em> a live website preview</p>
-        </div>
-      </div>
-      <div class="j88lfeature">
-        <img src="https://www.kasandbox.org/programming-images/creatures/Winston.png" alt="">
-        <div>
-          <p class="x003p">Customize your coding experience with different editor themes.</p>
-        </div>
-      </div>
-    </div>
-    <h2 style="margin-top:100px;" class="b336centered">Why I made this</h2>
-    <p class="x003p">To me, Khan Academy has a very small coding environment. Limited functionality, very tiny previews, and all those other sad things.</p>
-    <p class="x003p">My goal, ever since I became an HTML/CSS/JS guy was to expand KA's coding platform and give everyone the BEST coding experience ever while still following the guidelines.</p>
-    <p class="x003p">On the beginning of October, I made a project that used Local Storage, a long-believed disallowed functionality, but then Evan Lewis told me and said the <b>Entire Khan Academy</b> could use it. I was really excited that I impacted the whole Khan Academy, but in a small way. I want to make a bigger impact this time and give everyone the top coding experience and also, I want to share my knowledge with all of you.</p>
-    <p class="x003p">I hope you enjoy my project and make it part of your coding life. Happy Coding.</p>
-    <p class="x003p"><em><b>-LeviathanProgramming</b></em></p>
-  </div>
-  <div class="x002page" id="x001Userguide">
-    <h1 class="b336centered">User Guide</h1>
-    <h2 class="b336centered">Using the Editor</h2>
-    <p class="x003p">The editor is very simillar to the Khan Academy HTML editor but it has some differences. To check it out, create a project in the Projects section.</p>
-    <h3 class="b336centered">Why isn't my work showing in the in-browser preview?</h3>
-    <p class="x003p">The reason why it isn't showing is because for this editor, you will have to press the Reload button for it to work. If you don't press it, the program won't run.</p>
-    <h3 class="b336centered">How do I Live Preview my website?</h3>
-    <p class="x003p">Add a bit of code in the editor, and when you're satisfied with it, press the Live Preview button. You can then see your website live.</p>
-    <h3 class="b336centered">Why won't my live website update when I reload it?</h3>
-    <p class="x003p">Backend programming is impossible to do on KA. What you'll have to do is close the live tab and then press the Live Preview button again. Your website should now be immediately updated.</p>
-    <h3 class="b336centered">Why can I only make five projects?</h3>
-    <p class="x003p">Evan Lewis said that if using Local Storage, massive ammounts of data cannot be stored. That's why you have a limit of five projects only.</p>
-    <h3 class="b336centered">How do I deploy my live website to KA?</h3>
-    <p class="x003p">The instructions are a little complicated here, so read carefully.<br><br>1. After you have finished coding up your site, press the Deploy button. A popup window should show.<br>2. Follow the instructions of copying the code and pasting it into a KA webpage. Don't forget to save it!<br>3. If someone goes to your webpage and clicks the screen, they will see the live website. You can modify the code to have a descriptive screenshot. That will not be explained in this tutorial.<br>3.5. Don't try to display your live website on document load because your computer and/or the other user's computer will block it. It has to be done on mouse click or key press.</p>
-    <p class="x003p">If you have any questions, please ask me.<br><br>Happy Coding. <em><b>-LeviathanProgramming</b></em></p>
-  </div>
-  <div class="x002page" id="x001Editor">
-    <div id="x001editor-parent">
-      <h1 class="b336centered" id="x001project-title"></h1>
-      <div id="x001editor-wrap">
-        <div id="x001editor"></div>
-        <div id="x001preview"></div>
-      </div>
-      <div id="x001code-underline">
-        <div id="x001button-wrapper">
-          <button onclick="saveProject()" id="x001save-p">Save</button>
-          <button onclick="deploy()">Deploy</button>
-          <span>Choose Theme
-            <select id="x001theme">
-              <option value="default">Default</option>
-              <option value="monokai">Monokai</option>
-              <option value="dawn">Dawn</option>
-              <option value="dracula">Dracula</option>
-              <option value="ambiance">Ambiance</option>
-              <option value="eclipse">Eclipse</option>
-              <option value="github">Github</option>
-              <option value="nord_dark">Nord Dark</option>
-              <option value="solarized_dark">Solarized Dark</option>
-              <option value="solarized_light">Solarized Light</option>
-              <option value="terminal">Terminal</option>
-              <option value="twilight">Twilight</option>
-              <option value="xcode">Xcode</option>
-            </select>
-          </span>
-          <button onclick="livePreview()">Live Preview</button><button onclick="restart()">Reload</button>
-        </div>
-      </div>
-    </div>
-
-    <div id="x001code-deploy-parent">
-      <button id="x001close" style="position:absolute;right:5px;top:5px;padding:5px;" onclick="closeD()">X</button>
-      <h4 style="text-align:center;">Copy all the code and paste it into a KA webpage</h4>
-      <textArea id="x001code-deploy" readonly></textArea>
-    </div>
-    <!--<button class = "scenebutton Home-button">Home</button>
+      <!--<button class = "scenebutton Home-button">Home</button>
   <button class = "scenebutton Projects-button">My Projects</button>
   <button class = "scenebutton Credits-button">Credits</button>-->
-  </div>
-  <div class="x002page" id="x001Credits">
-    <h1 class="b336centered">Credits.</h1>
-    <p class="x003p">All code from this website is owned by LeviathanProgramming. If any of this work is copied and used without permission of the original creator, the person who copies it will be reported to the Khan Academy Guardians, possibly inflicting a Ban on their own account. If any one person wants to use some of this work for their own, they must ask the creator first and also write the line of code below in their project if he approves of it:</p>
-    <div style="width:80%;margin-left:10%;background:rgb(230,230,230);padding:2px;border-radius:2px;">
-      <code>&lt;!--This code was originally made by @LeviathanProgramming at Khan Academy. kaid_1111587369709668626687999--></code></div>
-    <p class="x003p">Please follow these rules carefully. Happy Coding.</p>
-  </div>
-  <div class="x002page" id="x001Projects">
-    <div id="x001new-project" onclick="dropCreator()">+New Project</div>
-    <div id="x001delete-project" onclick="openDel()">-Delete Project</div>
-    <div id="x001project-wrapper"></div>
-    <div id="x001project-form">
-      <input id="x001project-name" placeholder="project name">
-      <button id="x001create-project" onclick="pushNewProject()">Create Project</button><button id="x001cancel-project" onclick="closeForm()">Cancel</button>
     </div>
-    <div id="x001delete-form">
-      <input id="x001delete-name" placeholder="project name">
-      <button id="x001delete-d-project" onclick="spliceProject()">Delete Project</button><button id="x001cancel-d-project" onclick="closeDel()">Cancel</button>
+    <div class="x002page" id="x001Credits">
+      <h1 class="b336centered">Credits.</h1>
+      <p class="x003p">
+        All code from this website is owned by LeviathanProgramming. If any of this work is copied and used
+        without permission of the original creator, the person who copies it will be reported to the Khan
+        Academy Guardians, possibly inflicting a Ban on their own account. If any one person wants to use some
+        of this work for their own, they must ask the creator first and also write the line of code below in
+        their project if he approves of it:
+      </p>
+      <div
+        style="width: 80%; margin-left: 10%; background: rgb(230, 230, 230); padding: 2px; border-radius: 2px"
+      >
+        <code
+          >&lt;!--This code was originally made by @LeviathanProgramming at Khan Academy.
+          kaid_1111587369709668626687999--></code
+        >
+      </div>
+      <p class="x003p">Please follow these rules carefully. Happy Coding.</p>
     </div>
-    <!--<div style = "color:rgb(250,50,0);font-family:sans-serif;padding-left:10%;padding-right:10%;margin-top:50px;">Important Notice!  After you go to your project, click the editor.  The code did change but won't display until you click it.</div>-->
-  </div>
-
-  <div id="x001shadow-wall"></div>
-  <div id="x001navigation">
-    <div id="x001c-name">KhanHub</div>
-    <div id="x001hamburger" onclick="openNav()">
-      <div class="g887layer"></div>
-      <div class="g887layer"></div>
-      <div class="g887layer"></div>
+    <div class="x002page" id="x001Projects">
+      <div id="x001new-project" onclick="dropCreator()">+New Project</div>
+      <div id="x001delete-project" onclick="openDel()">-Delete Project</div>
+      <div id="x001project-wrapper"></div>
+      <div id="x001project-form">
+        <input id="x001project-name" placeholder="project name" />
+        <button id="x001create-project" onclick="pushNewProject()">Create Project</button
+        ><button id="x001cancel-project" onclick="closeForm()">Cancel</button>
+      </div>
+      <div id="x001delete-form">
+        <input id="x001delete-name" placeholder="project name" />
+        <button id="x001delete-d-project" onclick="spliceProject()">Delete Project</button
+        ><button id="x001cancel-d-project" onclick="closeDel()">Cancel</button>
+      </div>
+      <!--<div style = "color:rgb(250,50,0);font-family:sans-serif;padding-left:10%;padding-right:10%;margin-top:50px;">Important Notice!  After you go to your project, click the editor.  The code did change but won't display until you click it.</div>-->
     </div>
-  </div>
-  <div id="x001nav-links">
-    <div id="x001closeNav" onclick="closeNav()">✖︎</div>
-    <button class="scenebutton Home-button" style="margin-top:100px;" onclick="closeNav()">Home</button>
-    <button class="scenebutton About-button" onclick="closeNav()">About</button>
-    <button class="scenebutton Userguide-button" onclick="closeNav()">User Guide</button>
-    <button class="scenebutton Projects-button" onclick="closeNav()">Projects</button>
-    <!--<button class = "scenebutton Editor-button" onclick = "closeNav()">Editor</button>-->
-    <button class="scenebutton Credits-button" onclick="closeNav()">Credits</button>
 
-  </div>
-  <div id="x001trans-img">
-    <h1 class="b336centered" style="position:absolute;top:50%;left:50%;width:100%;height:20%;margin-left:-50%;margin-top:-100px;text-align:center;">KhanHub</h1>
-    <div id="x001loader"></div>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-html.min.js"></script>
-  <script src="script.js" type="text/javascript"></script>
-</body>
-
+    <div id="x001shadow-wall"></div>
+    <div id="x001navigation">
+      <div id="x001c-name">KhanHub</div>
+      <div id="x001hamburger" onclick="openNav()">
+        <div class="g887layer"></div>
+        <div class="g887layer"></div>
+        <div class="g887layer"></div>
+      </div>
+    </div>
+    <div id="x001nav-links">
+      <div id="x001closeNav" onclick="closeNav()">✖︎</div>
+      <button class="scenebutton Home-button" style="margin-top: 100px" onclick="closeNav()">Home</button>
+      <button class="scenebutton About-button" onclick="closeNav()">About</button>
+      <button class="scenebutton Userguide-button" onclick="closeNav()">User Guide</button>
+      <button class="scenebutton Projects-button" onclick="closeNav()">Projects</button>
+      <!--<button class = "scenebutton Editor-button" onclick = "closeNav()">Editor</button>-->
+      <button class="scenebutton Credits-button" onclick="closeNav()">Credits</button>
+    </div>
+    <div id="x001trans-img">
+      <h1
+        class="b336centered"
+        style="
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 100%;
+          height: 20%;
+          margin-left: -50%;
+          margin-top: -100px;
+          text-align: center;
+        "
+      >
+        KhanHub
+      </h1>
+      <div id="x001loader"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-html.min.js"></script>
+    <script src="script.js" type="text/javascript"></script>
+  </body>
 </html>

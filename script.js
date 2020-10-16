@@ -1,3 +1,4 @@
+var w;
 var actions = ['Home', 'About', 'Editor', 'Projects', 'Userguide', 'Credits'];
 var themes = [
   'monokai',
@@ -108,10 +109,15 @@ function openNav() {
   $('#x001nav-links').style.animationFillMode = 'forwards';
 }
 function restart() {
-  $('#x001preview').innerHTML = e.getOption('value');
+  $('#x001preview #x001thepreview').srcdoc = e.getOption('value');
+  if (w) {
+    w.document.open();
+    w.document.write(e.getOption('value'));
+    w.document.close();
+  }
 }
 function livePreview() {
-  var w = window.open();
+  w = window.open();
   w.document.open();
   w.document.write(e.getOption('value'));
   w.document.close();
