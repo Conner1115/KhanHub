@@ -51,10 +51,8 @@
     <p class="x003p">The reason why it isn't showing is because for this editor, you will have to press the Reload button for it to work. If you don't press it, the program won't run.</p>
     <h3 class="b336centered">How do I Live Preview my website?</h3>
     <p class="x003p">Add a bit of code in the editor, and when you're satisfied with it, press the Live Preview button. You can then see your website live.</p>
-    <h3 class="b336centered">Why won't my live website update when I reload it?</h3>
-    <p class="x003p">Backend programming is impossible to do on KA. What you'll have to do is close the live tab and then press the Live Preview button again. Your website should now be immediately updated.</p>
-    <h3 class="b336centered">Why won't the editor theme change back to Default?</h3>
-    <p class="x003p">I honestly don't know why this is happening. In order to restore the default theme, you will have to reload the site. Don't worry about saving your projects. That will be stored with Local Storage (Evan Lewis told me it's okay to use it). If you save your project and close the tab, reload the site or page, then your projects will be saved.</p>
+    <!-- <h3 class="b336centered">Why won't my live website update when I reload it?</h3>
+    <p class="x003p">Backend programming is impossible to do on KA. What you'll have to do is close the live tab and then press the Live Preview button again. Your website should now be immediately updated.</p> -->
     <h3 class="b336centered">Why can I only make five projects?</h3>
     <p class="x003p">Evan Lewis said that if using Local Storage, massive ammounts of data cannot be stored. That's why you have a limit of five projects only.</p>
     <h3 class="b336centered">How do I deploy my live website to KA?</h3>
@@ -66,7 +64,9 @@
       <h1 class="b336centered" id="x001project-title"></h1>
       <div id="x001editor-wrap">
         <div id="x001editor"></div>
-        <div id="x001preview"></div>
+        <div id="x001preview">
+          <iframe id="x001thepreview" frameborder="0"></iframe>
+        </div>
       </div>
       <div id="x001code-underline">
         <div id="x001button-wrapper">

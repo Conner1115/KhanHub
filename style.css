@@ -2,10 +2,12 @@
 #x001html {
   font-family: "Righteous", cursive;
 }
+
 .b336centered {
   text-align: center;
   color: black;
 }
+
 .x003p {
   font-family: "Montserrat", sans-serif;
   padding-left: 10%;
@@ -13,6 +15,7 @@
   text-align: justify;
   font-size: 18px;
 }
+
 .ace_editor {
   position: absolute;
   left: 5%;
@@ -21,6 +24,7 @@
   height: 400px;
   z-index: 2;
 }
+
 #x001preview {
   background: white;
   position: absolute;
@@ -32,11 +36,19 @@
   font-family: sans;
   overflow: auto;
 }
-#x001preview > html,
+
+/* #x001preview > html,
 #x001preview > body {
   margin: 0;
   padding: 0;
+} */
+/* if you still want that just prepend some styles to the srcdoc */
+
+#x001thepreview {
+  width: 100%;
+  height: 100%;
 }
+
 #x001code-underline {
   position: absolute;
   left: 5%;
@@ -46,12 +58,13 @@
   background: white;
   border: solid rgb(200, 200, 200) 1px;
 }
+
 #x001button-wrapper {
   position: absolute;
   right: 0%;
 }
 
-#x001button-wrapper > span {
+#x001button-wrapper>span {
   color: white;
   font-family: sans-serif;
   background: rgb(0, 100, 255);
@@ -59,6 +72,7 @@
   height: 40px;
   padding: 11px;
 }
+
 #x001theme {
   padding: 5px;
   background: rgb(0, 50, 205);
@@ -67,7 +81,8 @@
   border: none;
   outline: none;
 }
-#x001code-underline > #x001button-wrapper > button {
+
+#x001code-underline>#x001button-wrapper>button {
   color: white;
   background: rgb(0, 100, 255);
   border: none;
@@ -78,9 +93,11 @@
   padding-right: 10px;
   margin: 5px;
 }
-#x001code-underline > #x001button-wrapper > button:hover {
+
+#x001code-underline>#x001button-wrapper>button:hover {
   background: rgb(0, 80, 235);
 }
+
 #x001editor-wrap {
   margin-top: 50px;
   background: rgb(200, 200, 200);
@@ -90,6 +107,7 @@
   margin-left: 5%;
   margin-bottom: 75px;
 }
+
 #x001shadow-wall {
   position: fixed;
   top: 0px;
@@ -100,12 +118,15 @@
   z-index: 5;
   display: none;
 }
+
 button {
   outline: none;
 }
+
 button:hover {
   cursor: pointer;
 }
+
 #x001code-deploy-parent {
   position: fixed;
   left: 20%;
@@ -118,6 +139,7 @@ button:hover {
   box-shadow: 0 5px 10px 0px rgb(0, 0, 0, 0.2);
   top: -100%;
 }
+
 #x001code-deploy {
   margin-left: 10%;
   width: 80%;
@@ -126,22 +148,27 @@ button:hover {
   overflow: auto;
   outline: none;
 }
+
 @keyframes slidedown {
   0% {
     height: 0px;
   }
+
   100% {
     top: 0%;
   }
 }
+
 @keyframes slideup {
   0% {
     top: 0%;
   }
+
   100% {
     top: -200%;
   }
 }
+
 #x001trans-img {
   position: absolute;
   top: -600px;
@@ -151,15 +178,18 @@ button:hover {
   z-index: 10;
   background: white;
 }
+
 @keyframes switchTrans {
   50% {
     top: 0px;
   }
 }
+
 #x001editor-parent {
   width: 100%;
   height: 100%;
 }
+
 .x002page {
   width: 100%;
   overflow-x: hidden;
@@ -168,6 +198,7 @@ button:hover {
   top: 15%;
   left: 0px;
 }
+
 #x001navigation {
   z-index: 7;
   position: fixed;
@@ -178,11 +209,13 @@ button:hover {
   box-shadow: 0px 2px 5px 0px rgb(0, 0, 0, 0.2);
   background: white;
 }
+
 #x001c-name {
   font-size: 40px;
   margin-left: 20px;
   padding-top: 10px;
 }
+
 #x001hamburger {
   background: rgba(0, 0, 0, 0);
   width: 60px;
@@ -191,6 +224,7 @@ button:hover {
   right: 25px;
   top: 5px;
 }
+
 .g887layer {
   width: 50px;
   height: 5px;
@@ -200,9 +234,11 @@ button:hover {
   margin-bottom: 5px;
   border-radius: 2px;
 }
+
 #x001hamburger:hover {
   cursor: pointer;
 }
+
 #x001nav-links {
   position: fixed;
   z-index: 10;
@@ -213,7 +249,8 @@ button:hover {
   right: 0px;
   top: -100%;
 }
-#x001nav-links > button {
+
+#x001nav-links>button {
   width: 200px;
   height: 50px;
   font-size: 20px;
@@ -222,6 +259,7 @@ button:hover {
   margin-bottom: 10px;
   font-family: "Righteous", sans-serif;
 }
+
 #x001closeNav {
   position: absolute;
   right: 5px;
@@ -237,9 +275,11 @@ button:hover {
   height: 20px;
   border-radius: 5px;
 }
+
 #x001closeNav:hover {
   cursor: pointer;
 }
+
 #x001loader {
   width: 100px;
   height: 100px;
@@ -253,16 +293,19 @@ button:hover {
   top: 45%;
   margin-left: -50px;
 }
+
 @keyframes spin {
   100% {
     transform: rotate(360deg);
   }
 }
+
 #x001feature-wrapper {
   display: flex;
   width: 100%;
   height: 150px;
 }
+
 .j88lfeature {
   background: rgb(250, 250, 250);
   width: 30%;
@@ -273,20 +316,23 @@ button:hover {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-.j88lfeature > img {
+
+.j88lfeature>img {
   width: 50px;
   height: 50px;
   position: relative;
   left: 50%;
   margin-left: -25px;
 }
-.j88lfeature > div > p {
+
+.j88lfeature>div>p {
   margin-left: -25px;
   width: 80%;
   margin-left: 0%;
   text-align: left;
   font-size: 17px;
 }
+
 .project {
   width: 85%;
   margin-left: 5%;
@@ -300,30 +346,37 @@ button:hover {
   padding-left: 5%;
   animation: Nenlarge 0.5s 1;
 }
+
 .project-name {
   font-size: 20px;
 }
+
 .project:hover {
   cursor: pointer;
   animation: enlarge 0.5s 1;
   animation-fill-mode: forwards;
 }
+
 @keyframes enlarge {
   0% {
     transform: scale(1);
   }
+
   100% {
     transform: scale(1.1);
   }
 }
+
 @keyframes Nenlarge {
   0% {
     transform: scale(1.1);
   }
+
   100% {
     transform: scale(1);
   }
 }
+
 #x001new-project {
   padding: 10px;
   border-radius: 5px;
@@ -332,6 +385,7 @@ button:hover {
   position: absolute;
   right: 5%;
 }
+
 #x001delete-project {
   padding: 10px;
   border-radius: 5px;
@@ -341,13 +395,16 @@ button:hover {
   color: white;
   left: 5%;
 }
+
 #x001project-wrapper {
   margin-top: 100px;
 }
+
 #x001new-project:hover,
 #x001delete-project:hover {
   cursor: pointer;
 }
+
 #x001project-form {
   position: fixed;
   z-index: 10;
@@ -358,7 +415,8 @@ button:hover {
   background: white;
   box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.2);
 }
-#x001project-form > input {
+
+#x001project-form>input {
   width: 80%;
   margin: 10%;
   padding: 5px;
@@ -367,6 +425,7 @@ button:hover {
   box-shadow: 0 3px 0px 0px rgb(0, 100, 255);
   outline: none;
 }
+
 #x001create-project {
   margin-left: 10%;
   border: none;
@@ -375,6 +434,7 @@ button:hover {
   border-radius: 5px;
   color: white;
 }
+
 #x001cancel-project {
   border: none;
   padding: 10px;
@@ -393,7 +453,8 @@ button:hover {
   background: white;
   box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.2);
 }
-#x001delete-form > input {
+
+#x001delete-form>input {
   width: 80%;
   margin: 10%;
   padding: 5px;
@@ -402,6 +463,7 @@ button:hover {
   box-shadow: 0 3px 0px 0px rgb(0, 100, 255);
   outline: none;
 }
+
 #x001delete-d-project {
   margin-left: 10%;
   border: none;
@@ -410,6 +472,7 @@ button:hover {
   border-radius: 5px;
   color: white;
 }
+
 #x001cancel-d-project {
   border: none;
   padding: 10px;
