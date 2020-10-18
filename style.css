@@ -44,11 +44,6 @@
 } */
 /* if you still want that just prepend some styles to the srcdoc */
 
-#x001thepreview {
-  width: 100%;
-  height: 100%;
-}
-
 #x001code-underline {
   position: absolute;
   left: 5%;

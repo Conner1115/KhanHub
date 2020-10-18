@@ -109,7 +109,10 @@ function openNav() {
   $('#x001nav-links').style.animationFillMode = 'forwards';
 }
 function restart() {
-  $('#x001preview #x001thepreview').srcdoc = e.getOption('value');
+  if (!$('#x001preview').shadowRoot) {
+    $('#x001preview').attachShadow({ mode: 'open' });
+  }
+  $('#x001preview').shadowRoot.innerHTML = e.getOption('value');
   if (w) {
     w.document.open();
     w.document.write(e.getOption('value'));
